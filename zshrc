@@ -13,3 +13,6 @@ source ~/.zshrc_modules/powerline.sh
 
 # alias setting module
 source ~/.zshrc_modules/alias.sh
+
+# zsh completion setting module
+source ~/.zshrc_modules/zsh-completions.sh
