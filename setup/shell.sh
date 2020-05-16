@@ -6,5 +6,5 @@ git clone https://github.com/powerline/fonts.git && cd fonts && ./install.sh
 # zsh plugin manager
 brew install zplug
 
-# locale setting
-export LANG=en_US.UTF-8
+# git completion
+wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O ~/.git-completion.bash
