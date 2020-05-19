@@ -18,7 +18,7 @@ alias lab='cd ~/lab'
 # useful alias
 alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 
-alias jpt="jupyter notebook --notebook-dir=(pwd)"
+alias jpt="jupyter notebook --notebook-dir=$(pwd)"
 
 alias :q='cd ..'
 

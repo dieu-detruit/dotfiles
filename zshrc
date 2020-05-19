@@ -2,8 +2,7 @@
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
-# pyenv settings (nessesary)
-eval "$(pyenv init -)"
+source ~/.zshrc_modules/python.sh
 
 # locale setting
 export LANG=en_US.UTF-8
