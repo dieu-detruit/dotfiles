@@ -19,3 +19,9 @@ let g:deoplete#enable_at_startup = 1
 
 " lexima (parenthese completion)
 call lexima#add_rule({'char': '<', 'input_after': '>', 'filetype': 'cpp'})
+call lexima#add_rule({'char': '>', 'at': '\%#>', 'leave': 1, 'filetype': 'cpp'})
+call lexima#add_rule({'char': '<BS>', 'at': '<\%#>', 'delete': 1, 'filetype': 'cpp'})
+set matchpairs& matchpairs+=<:>
+
+" parenmatch ( faster parenthese hilighter than standard )
+let g:loaded_matchparen = 1

@@ -10,6 +10,10 @@ repo  = 'cespare/vim-toml'
 [[plugins]]
 repo = 'cohama/lexima.vim'
 
+# カッコハイライト(公式より速いし見やすい)
+[[plugins]]
+repo = 'itchyny/vim-parenmatch'
+
 # Mediawiki
 [[plugins]]
 repo = "chikamichi/mediawiki.vim"
