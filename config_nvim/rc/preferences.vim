@@ -22,9 +22,13 @@ set synmaxcol=320
 colorscheme koehler
 
 " keymapping
-let mapleader = '\<Space>'
+let mapleader = " "
 
-nnoremap <Leader>w :w<CR>
+nmap <Leader>w [window]
+nnoremap [window]h <C-w>h
+nnoremap [window]j <C-w>j
+nnoremap [window]k <C-w>k
+nnoremap [window]l <C-w>l
 
 nnoremap  <silent> <C-c><C-c> :nohlsearch<CR>
 

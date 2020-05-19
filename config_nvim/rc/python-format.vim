@@ -1,3 +1,4 @@
+" original http://stackoverflow.com/questions/12374200/using-uncrustify-with-vim/15513829#15513829
 function! Preserve(command)
     " Save the last search.
     let search = @/
@@ -18,13 +19,9 @@ function! Preserve(command)
     call setpos('.', cursor_position)
 endfunction
 
-function! s:clang_format()
-    call Preserve(':silent %!clang-format -')
+function! s:Autopep8()
+    call Preserve(':silent %!autopep8 -')
 endfunction
 
-if executable('clang-format')
-  augroup cpp_clang_format
-    autocmd!
-    autocmd BufWrite,FileWritePre,FileAppendPre *.[ch]pp call s:clang_format()
-  augroup END
-endif
+" 保存時に自動修正
+autocmd BufWrite,FileWritePre,FileAppendPre *.py call s:Autopep8()

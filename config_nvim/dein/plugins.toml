@@ -2,10 +2,6 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
-# Toml
-[[plugins]]
-repo  = 'cespare/vim-toml'
-
 # カッコ補完
 [[plugins]]
 repo = 'cohama/lexima.vim'
@@ -14,6 +10,14 @@ repo = 'cohama/lexima.vim'
 [[plugins]]
 repo = 'itchyny/vim-parenmatch'
 
+# コメントアウト
+[[plugins]]
+repo = 'preservim/nerdcommenter'
+
 # Mediawiki
 [[plugins]]
-repo = "chikamichi/mediawiki.vim"
+repo = 'chikamichi/mediawiki.vim'
+
+# Toml
+[[plugins]]
+repo  = 'cespare/vim-toml'

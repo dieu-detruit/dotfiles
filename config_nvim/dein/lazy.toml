@@ -2,3 +2,8 @@
 [[plugins]]
 repo = 'haya14busa/dein-command.vim'
 on_cmd = 'Dein'
+
+# python indent
+[[plugins]]
+repo = 'Vimjas/vim-python-pep8-indent'
+on_ft = 'python'

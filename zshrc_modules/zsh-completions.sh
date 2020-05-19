@@ -198,3 +198,8 @@ ress() {
         github-markup $FILENAME | w3m -T text/html
     fi
 }
+
+# ファイル・コマンド補完
+autoload -U compinit && compinit
+
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}'
