@@ -21,3 +21,11 @@ repo = 'chikamichi/mediawiki.vim'
 # Toml
 [[plugins]]
 repo  = 'cespare/vim-toml'
+
+# 補完
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+
+# deoplete plugin for clang
+[[plugins]]
+repo = 'zchee/deoplete-clang'

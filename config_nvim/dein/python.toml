@@ -1,5 +1,13 @@
+# python indent
+[[plugins]]
+repo = 'Vimjas/vim-python-pep8-indent'
+on_ft = 'python'
+
 # 補完
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
-depends = 'context_filetype.vim'
-on_i = 1
+on_event = 'InsertEnter'
+
+# deoplete plugin for clang
+[[plugins]]
+repo = 'zchee/deoplete-clang'
