@@ -15,3 +15,6 @@ source ~/.zshrc_modules/alias.sh
 
 # zsh completion setting module
 source ~/.zshrc_modules/zsh-completions.sh
+
+# PATH setting module
+source ~/.zshrc_modules/path.sh

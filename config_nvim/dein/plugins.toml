@@ -25,7 +25,48 @@ repo  = 'cespare/vim-toml'
 # 補完
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
+on_hook = '''
+call g:deoplete#custom#option('max_list', 100)
+call g:deoplete#custom#option('ignore_case', v:true)
+call g:deoplete#custom#option('smart_case', v:true)
+call g:deoplete#custom#option('min_pattern_length', 3)
+call g:deoplete#custom#option('refresh_always', v:true)
+'''
 
-# deoplete plugin for clang
+# LSPでC++の補完
 [[plugins]]
-repo = 'zchee/deoplete-clang'
+repo='prabirshrestha/async.vim'
+
+[[plugins]]
+repo='prabirshrestha/vim-lsp'
+hook_add='''
+if executable('clangd')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'clangd',
+        \ 'cmd': {server_info->['clangd']},
+        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+        \ })
+endif
+
+let g:lsp_diagnostics_enabled = 0
+let g:lsp_preview_max_height = 5
+'''
+
+[[plugins]]
+repo='prabirshrestha/asyncomplete.vim'
+
+[[plugins]]
+repo='prabirshrestha/asyncomplete-lsp.vim'
+
+[[plugins]]
+repo='prabirshrestha/asyncomplete-neosnippet.vim'
+hook_add='''
+call asyncomplete#register_source(asyncomplete#sources#neosnippet#get_source_options({
+    \ 'name': 'neosnippet',
+    \ 'whitelist': ['*'],
+    \ 'completor': function('asyncomplete#sources#neosnippet#completor'),
+    \ }))
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+'''
