@@ -1,5 +1,5 @@
 BasedOnStyle: LLVM
-Standard: Cpp11
+Standard: Latest
 
 ColumnLimit: 0
 IndentWidth: 4
