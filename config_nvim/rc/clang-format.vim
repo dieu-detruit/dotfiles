@@ -26,5 +26,6 @@ if executable('clang-format')
   augroup cpp_clang_format
     autocmd!
     autocmd BufWrite,FileWritePre,FileAppendPre *.[ch]pp call s:clang_format()
+    autocmd BufWrite,FileWritePre,FileAppendPre *.[ch] call s:clang_format()
   augroup END
 endif

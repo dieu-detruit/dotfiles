@@ -1,19 +1,21 @@
 # override command with option
-alias ls='ls -G'
-alias la='ls -a -G'
-alias ll='ls -a -G'
+alias ls='ls --color=auto'
+alias la='ls -a --color=auto'
+alias ll='ls -a --color=auto'
 
 alias vi='nvim -O'
 alias vim='nvim -O'
+alias v='nvim -O'
+alias vimm='nvim -O'
 
-alias g++='g++ -std=c++17'
+alias g++='g++-10 -std=c++20'
 
 alias eagle='open -n -a EAGLE'
 
 # directory shortcut
 alias tcd='cd ~/Documents/main'
 alias rcd='cd ~/RoboTech'
-alias lab='cd ~/lab'
+alias lab='cd ~/mimuralab'
 
 # useful alias
 alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
@@ -45,8 +47,4 @@ alias makke=make
 alias makek=make
 alias makee=make
 
-alias v='nvim -O'
-alias vimm='nvim -O'
-
-alias notify='terminal-notifier -sound hoge'
-alias notify_end='terminal-notifier -sound hoge -message "Done!"'
+alias open='xdg-open'

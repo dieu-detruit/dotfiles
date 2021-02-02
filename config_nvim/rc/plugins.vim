@@ -1,6 +1,7 @@
-" python settings
-let g:python_host_prog = '/Users/dieu_detruit/dotfiles/pyenv/versions/2.7.17/envs/forvim2/bin/python'
-let g:python3_host_prog = '/Users/dieu_detruit/dotfiles/pyenv/versions/3.7.3/envs/forvim/bin/python3'
+" prog host settings
+let g:python_host_prog = '/home/dieu/.pyenv/versions/2.7.18/bin/python2'
+let g:python3_host_prog = '/home/dieu/.pyenv/versions/3.9.1/bin/python3'
+let g:ruby_host_prog = '/usr/bin/ruby'
 
 " settings for dein itself
 let s:dein_dir = expand('$DATA/dein')

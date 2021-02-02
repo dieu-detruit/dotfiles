@@ -1,5 +1,5 @@
 # zplug (zsh plugin manager)
-export ZPLUG_HOME=/usr/local/opt/zplug
+export ZPLUG_HOME=~/.zplug
 source $ZPLUG_HOME/init.zsh
 
 source ~/.zshrc_modules/python.sh
@@ -14,7 +14,7 @@ source ~/.zshrc_modules/powerline.sh
 source ~/.zshrc_modules/alias.sh
 
 # zsh completion setting module
-source ~/.zshrc_modules/zsh-completions.sh
+#source ~/.zshrc_modules/zsh-completions.sh
 
 # PATH setting module
 source ~/.zshrc_modules/path.sh

@@ -3,7 +3,7 @@ set noswapfile
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set clipboard=unnamed
+set clipboard+=unnamedplus
 set smartindent
 
 " tab settings for each file type
@@ -33,6 +33,8 @@ nnoremap [window]l <C-w>l
 nnoremap  <silent> <C-c><C-c> :nohlsearch<CR>
 
 nnoremap <silent> <CR> A<CR><ESC>
+
+inoremap <silent> jj <ESC>
 
 " syntax
 " Disable function highlighting (affects both C and C++ files)
