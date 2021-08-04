@@ -13,6 +13,13 @@ augroup fileTypeIndent
     autocmd BufNewFile,BufRead *.html setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd BufNewFile,BufRead *.rb setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd BufNewFile,BufRead *.css setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.xacro setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.xml setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.sdf setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.world setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.launch setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.vue setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.urdf setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
 " Max column syntax works to read the file on time
@@ -33,8 +40,6 @@ nnoremap [window]l <C-w>l
 nnoremap  <silent> <C-c><C-c> :nohlsearch<CR>
 
 nnoremap <silent> <CR> A<CR><ESC>
-
-inoremap <silent> jj <ESC>
 
 " syntax
 " Disable function highlighting (affects both C and C++ files)

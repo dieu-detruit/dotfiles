@@ -18,3 +18,6 @@ source ~/.zshrc_modules/alias.sh
 
 # PATH setting module
 source ~/.zshrc_modules/path.sh
+
+# conda settings
+#source ~/.zshrc_modules/conda.sh

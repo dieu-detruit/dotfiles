@@ -1,6 +1,6 @@
 " prog host settings
 let g:python_host_prog = '/home/dieu/.pyenv/versions/2.7.18/bin/python2'
-let g:python3_host_prog = '/home/dieu/.pyenv/versions/3.9.1/bin/python3'
+let g:python3_host_prog = '/home/dieu/.pyenv/versions/3.8.9/bin/python3'
 let g:ruby_host_prog = '/usr/bin/ruby'
 
 " settings for dein itself
