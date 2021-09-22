@@ -21,9 +21,3 @@ source ~/.zshrc_modules/path.sh
 
 # ROS Settings
 source ~/.zshrc_modules/ros.sh
-
-# conda settings
-#source ~/.zshrc_modules/conda.sh
-
-# vulcan sdk
-source ~/tools/libs/vulkan/1.2.176.1/setup-env.sh
