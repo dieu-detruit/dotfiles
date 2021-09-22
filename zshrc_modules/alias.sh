@@ -10,8 +10,6 @@ alias vimm='nvim -O'
 
 alias g++='g++-10 -std=c++20'
 
-alias eagle='open -n -a EAGLE'
-
 # directory shortcut
 alias tcd='cd ~/Documents/main'
 alias rcd='cd ~/RoboTech'
@@ -19,6 +17,8 @@ alias lab='cd ~/mimuralab'
 
 # useful alias
 alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
+
+alias json_pretty="python -c 'import sys,json;print(json.dumps(json.loads(sys.stdin.read()),indent=4,ensure_ascii=False))'"
 
 jpt () {
     jupyter-lab --notebook-dir=$(pwd)
@@ -38,13 +38,24 @@ unzip_win () {
     fi
 }
 
-# salvation for typo
-alias mak=make
-alias mke=make
-alias maek=make
-alias mkae=make
-alias makke=make
-alias makek=make
-alias makee=make
+alias uefi_open='sudo systemctl reboot --firmware-setup'
 
 alias open='xdg-open'
+
+inkscape () {
+    nohup /bin/env inkscape $* > /dev/null &
+}
+
+alias noetic='source /opt/ros/noetic/setup.zsh'
+
+alias mnt_win='sudo mount /dev/sda3 /mnt/windows'
+
+rosenv () {
+    if [ $1 = "noetic" ]; then
+        echo "source /opt/ros/noetic/setup.zsh" > $HOME/.zshrc_modules/ros.sh
+    elif [ $1 = "foxy" ]; then
+        echo "source $HOME/tools/ros2_foxy/ros2-linux/setup.zsh" > $HOME/.zshrc_modules/ros.sh
+    else
+        echo "Usage: rosenv [noetic | foxy]"
+    fi
+}
