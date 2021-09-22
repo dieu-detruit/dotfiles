@@ -14,7 +14,7 @@ std::deque<std::string> compile(std::deque<std::string> rc_lines)
 
     std::regex is_comment_re{R"(^\s*#)"};
     std::regex is_empty_re{R"(^\s*$)"};
-    std::regex replace_comment_re{R"(#[^'"]*$)"};
+    std::regex replace_comment_re{R"esc(\s+#[^'"]*$)esc", std::regex_constants::ECMAScript};
     std::regex path_export_re{R"(^export PATH="(\S+):\$PATH"\s*$)"};
     std::regex var_export_re{R"esc(^export (\S+)="(\S+)"\s*$)esc"};
 
