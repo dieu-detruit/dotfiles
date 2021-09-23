@@ -14,7 +14,7 @@ std::deque<std::string> compile(std::deque<std::string> rc_lines)
 
     std::regex is_comment_re{R"(^\s*#)"};
     std::regex is_empty_re{R"(^\s*$)"};
-    std::regex replace_comment_re{R"esc(\s+#[^'"]*$)esc", std::regex_constants::ECMAScript};
+    //std::regex replace_comment_re{R"esc(\s+#[^'"]*$)esc", std::regex_constants::ECMAScript};
     std::regex path_export_re{R"(^export PATH="(\S+):\$PATH"\s*$)"};
     std::regex var_export_re{R"esc(^export (\S+)="(\S+)"\s*$)esc"};
 
@@ -22,7 +22,8 @@ std::deque<std::string> compile(std::deque<std::string> rc_lines)
         if (std::regex_search(line, is_comment_re)) continue;
         if (std::regex_search(line, is_empty_re)) continue;
 
-        std::string line_comment_removed = std::regex_replace(line, replace_comment_re, "");
+        //std::string line_comment_removed = std::regex_replace(line, replace_comment_re, "");
+        std::string line_comment_removed = line;
 
         {
             std::smatch match_result;
@@ -60,6 +61,9 @@ std::deque<std::string> compile(std::deque<std::string> rc_lines)
     for (auto [varname, content] : export_vars) {
         std::regex var_re{std::string(R"(\$)") + varname};
         compiled_path_export = std::regex_replace(compiled_path_export, var_re, content);
+        for (std::string& line : compiled_rc) {
+            line = std::regex_replace(line, var_re, content);
+        }
     }
 
     compiled_rc.push_front(compiled_path_export);

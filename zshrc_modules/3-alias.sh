@@ -11,22 +11,16 @@ alias vimm='nvim -O'
 alias g++='g++-10 -std=c++20'
 
 # directory shortcut
-alias tcd='cd ~/Documents/main'
-alias rcd='cd ~/RoboTech'
-alias lab='cd ~/mimuralab'
+alias lab='cd ~/inamilab'
 
 # useful alias
 alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 
 alias json_pretty="python -c 'import sys,json;print(json.dumps(json.loads(sys.stdin.read()),indent=4,ensure_ascii=False))'"
 
-jpt () {
-    jupyter-lab --notebook-dir=$(pwd)
-}
+alias jpt=jupyter-lab --notebook-dir=$(pwd)
 
-alias :q='cd ..'
-
-alias ssh_hyperkit="screen ~/Library/Containers/com.docker.docker/Data/vms/0/tty"
+alias :q='exit'
 
 ## unzip file zipped in defected OS
 unzip_win () {
@@ -46,16 +40,16 @@ inkscape () {
     nohup /bin/env inkscape $* > /dev/null &
 }
 
-alias noetic='source /opt/ros/noetic/setup.zsh'
-
 alias mnt_win='sudo mount /dev/sda3 /mnt/windows'
 
+# ros
 rosenv () {
     if [ $1 = "noetic" ]; then
-        echo "source /opt/ros/noetic/setup.zsh" > $HOME/.zshrc_modules/ros.sh
+        echo "source /opt/ros/noetic/setup.zsh" > $HOME/.zshrc_modules/cache/ros.sh
     elif [ $1 = "foxy" ]; then
-        echo "source $HOME/tools/ros2_foxy/ros2-linux/setup.zsh" > $HOME/.zshrc_modules/ros.sh
+        echo "source $HOME/tools/ros2_foxy/ros2-linux/setup.zsh" > $HOME/.zshrc_modules/cache/ros.sh
     else
         echo "Usage: rosenv [noetic | foxy]"
     fi
 }
+source $HOME/.zshrc_modules/cache/ros.sh
