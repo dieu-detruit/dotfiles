@@ -1,3 +1,4 @@
+#include <cassert>
 #include <cstdlib>
 #include <deque>
 #include <filesystem>
@@ -5,6 +6,37 @@
 #include <iostream>
 #include <regex>
 #include <sstream>
+
+template <class Arg>
+inline void make_command_impl(std::ostream& os, Arg arg)
+{
+    os << arg;
+}
+
+template <class Arg0, class... Args>
+inline void make_command_impl(std::ostream& os, Arg0 arg0, Args... args)
+{
+    os << arg0 << ' ';
+    make_command_impl(os, args...);
+}
+
+template <class... Args>
+std::string make_command(Args... args)
+{
+    std::ostringstream oss;
+    make_command_impl(oss, args...);
+    return oss.str();
+}
+
+void shell(std::string command)
+{
+    int command_result = std::system(command.c_str());
+    if (command_result != 0) {
+        std::cerr << '"' << command << '"' << " failed" << std::endl;
+    }
+    assert(command_result == 0);
+}
+
 
 std::deque<std::string> compile(std::deque<std::string> rc_lines)
 {
@@ -81,12 +113,19 @@ int main()
     std::deque<std::string> rc_lines;
 
     std::regex is_shellfile_re{".sh$"};
-    char buffer[1024];
+    std::vector<fs::path> modules_path_sorted;
     for (const fs::directory_entry& entry : fs::directory_iterator(modules_path)) {
         if (not std::regex_search(entry.path().generic_string(), is_shellfile_re)) {
             continue;
         }
-        std::ifstream shell_file(entry.path());
+        modules_path_sorted.emplace_back(entry.path());
+    }
+    std::sort(modules_path_sorted.begin(), modules_path_sorted.end(),
+        [](const fs::path& a, const fs::path& b) { return a.generic_string() < b.generic_string(); });
+
+    char buffer[1024];
+    for (auto module_path : modules_path_sorted) {
+        std::ifstream shell_file(module_path);
         while (true) {
             shell_file.getline(buffer, sizeof(buffer));
             if (shell_file.bad() || shell_file.eof()) {
@@ -98,10 +137,17 @@ int main()
 
     rc_lines = compile(rc_lines);
 
-    std::ofstream zshrc(home_path / ".zshrc");
+    const fs::path zshrc_path = home_path / ".zshrc";
+    std::ofstream zshrc(zshrc_path);
     for (auto line : rc_lines) {
         zshrc << line << std::endl;
     }
+
+    auto zcompile_command = make_command(
+        "source", (home_path / ".zplug" / "init.zsh").generic_string(), "&&",
+        "zcompile", zshrc_path.generic_string());
+
+    shell(make_command("zsh", "-c", '"', zcompile_command, '"'));
 
     return 0;
 }
