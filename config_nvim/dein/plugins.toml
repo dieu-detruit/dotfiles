@@ -22,6 +22,30 @@ repo = 'chikamichi/mediawiki.vim'
 [[plugins]]
 repo  = 'cespare/vim-toml'
 
+# dart
+[[plugins]]
+repo  = 'dart-lang/dart-vim-plugin'
+
+
+# Julia
+[[plugins]]
+repo='JuliaEditorSupport/julia-vim'
+hook_add='''
+let g:latex_to_unicode_tab = 1
+'''
+
+# Rust
+[[plugins]]
+repo='rust-lang/rust.vim'
+hook_add='''
+let g:rustfmt_autosave = 1
+'''
+
+# Haskell
+[[plugins]]
+repo='alx741/vim-stylishask'
+
+
 # 補完
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
@@ -34,6 +58,19 @@ call g:deoplete#custom#option('refresh_always', v:true)
 '''
 
 # LSPでC++の補完
+#[[plugins]]
+#repo = 'autozimu/LanguageClient-neovim'
+#rev = 'next'
+#build = 'bash install.sh'
+#hook_add = '''
+#let g:LanguageClient_serverCommands = {
+    #\ 'c': ['clangd', '-compile-commands-dir=' . getcwd() . '/build'],
+    #\ 'cpp': ['clangd', '-compile-commands-dir=' . getcwd() . '/build'],
+    #...
+    #\ }
+#'''
+
+
 #[[plugins]]
 #repo='prabirshrestha/async.vim'
 
@@ -70,21 +107,3 @@ call g:deoplete#custom#option('refresh_always', v:true)
 #smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 #xmap <C-k>     <Plug>(neosnippet_expand_target)
 #'''
-
-# Julia
-[[plugins]]
-repo='JuliaEditorSupport/julia-vim'
-hook_add='''
-let g:latex_to_unicode_tab = 1
-'''
-
-# Rust
-[[plugins]]
-repo='rust-lang/rust.vim'
-hook_add='''
-let g:rustfmt_autosave = 1
-'''
-
-# Haskell
-[[plugins]]
-repo='alx741/vim-stylishask'
