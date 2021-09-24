@@ -1,0 +1,2 @@
+setxkbmap jp
+xmodmap ~/.Xmodmap
