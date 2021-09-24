@@ -47,8 +47,10 @@ alias mnt_win='sudo mount /dev/sda3 /mnt/windows'
 rosenv () {
     if [ $1 = "noetic" ]; then
         echo "source /opt/ros/noetic/setup.zsh" > $HOME/.zshrc_modules/cache/ros.sh
+        echo "rosenv was set to noetic"
     elif [ $1 = "foxy" ]; then
         echo "source $HOME/tools/ros2_foxy/ros2-linux/setup.zsh" > $HOME/.zshrc_modules/cache/ros.sh
+        echo "rosenv was set to foxy"
     else
         echo "Usage: rosenv [noetic | foxy]"
     fi
