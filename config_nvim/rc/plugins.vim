@@ -2,7 +2,7 @@
 
 let g:python_host_prog = join([system('pyenv prefix | sed -e "s/.*://" | sed -ze "s/\n//g"'), 'bin/python'], '/')
 let g:python3_host_prog = join([system('pyenv prefix | sed -e "s/:.*//" | sed -ze "s/\n//g"'), 'bin/python'], '/')
-let g:ruby_host_prog = '/usr/bin/ruby'
+let g:ruby_host_prog = join([system('rbenv prefix | sed -ze "s/\n//g"'), 'bin/ruby'], '/')
 
 " settings for dein itself
 let s:dein_dir = expand('$DATA/dein')

@@ -14,3 +14,5 @@ export PATH="$HOME/tools/flutter/bin:$PATH"
 
 export DYLD_LIBRARY_PATH="/usr/local/cuda/lib64:$DYLD_LIBRARY_PATH"
 export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH"
+
+export PATH="$HOME/.rbenv/bin:$PATH"
