@@ -69,7 +69,6 @@ std::deque<std::string> compile(std::deque<std::string> rc_lines)
             std::smatch match_result;
             if (std::regex_search(line_comment_removed, match_result, var_export_re)) {
                 export_vars.emplace_back(std::make_tuple(match_result[1].str(), match_result[2].str()));
-                continue;
             }
         }
 
