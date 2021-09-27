@@ -25,7 +25,9 @@ repo  = 'cespare/vim-toml'
 # dart
 [[plugins]]
 repo  = 'dart-lang/dart-vim-plugin'
-
+hook_add='''
+let g:dart_format_on_save = 1
+'''
 
 # Julia
 [[plugins]]
