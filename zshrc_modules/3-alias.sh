@@ -8,7 +8,6 @@ alias vim='nvim -O'
 alias v='nvim -O'
 alias vimm='nvim -O'
 
-alias g++='g++-10 -std=c++20'
 alias clang++='clang++-10'
 
 # directory shortcut
@@ -42,3 +41,15 @@ inkscape () {
 }
 
 alias mnt_win='sudo mount /dev/sda3 /mnt/windows'
+
+xmlformat () {
+    for i
+    do
+        mv "$i" "$i.bak" || exit 1
+        if xmllint --format "$i.bak" > "$i"; then
+            rm "$i.bak"
+        else
+            mv "$i.bak" "$i"
+        fi
+    done
+}
