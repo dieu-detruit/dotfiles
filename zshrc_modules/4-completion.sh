@@ -1,3 +1,3 @@
-fpath=($HOME/.zshrc_modules/completion $fpath)
+fpath=($HOME/.completion $fpath)
 autoload -Uz compinit
 compinit
