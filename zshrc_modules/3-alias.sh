@@ -36,6 +36,8 @@ alias uefi_open='sudo systemctl reboot --firmware-setup'
 
 alias open='xdg-open'
 
+alias clear_cache='sudo sysctl -w vm.drop_caches=3'
+
 inkscape () {
     nohup /bin/env inkscape $* > /dev/null &
 }
