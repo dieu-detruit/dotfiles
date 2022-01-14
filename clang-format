@@ -8,10 +8,10 @@ MaxEmptyLinesToKeep: 2
 
 BreakBeforeBinaryOperators: All
 BreakBeforeBraces: Linux
-AlignAfterOpenBracket: false
+AlignAfterOpenBracket: DontAlign
 SpaceBeforeParens: ControlStatements
 AlwaysBreakTemplateDeclarations: true
-AlignEscapedNewlinesLeft: true
+AlignEscapedNewlines: Left
 PointerAlignment: Left
 AccessModifierOffset: -4
 AllowShortFunctionsOnASingleLine: All

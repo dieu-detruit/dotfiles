@@ -25,7 +25,9 @@ repo  = 'cespare/vim-toml'
 # dart
 [[plugins]]
 repo  = 'dart-lang/dart-vim-plugin'
-
+hook_add='''
+let g:dart_format_on_save = 1
+'''
 
 # Julia
 [[plugins]]
@@ -45,6 +47,7 @@ let g:rustfmt_autosave = 1
 [[plugins]]
 repo='alx741/vim-stylishask'
 
+<<<<<<< HEAD
 # Typescript
 [[plugins]]
 repo='leafgarland/typescript-vim'
@@ -52,7 +55,6 @@ repo='leafgarland/typescript-vim'
 # TSX
 [[plugins]]
 repo='tasn/vim-tsx'
-
 
 # 補完
 [[plugins]]

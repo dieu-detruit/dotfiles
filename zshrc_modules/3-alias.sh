@@ -36,8 +36,22 @@ alias uefi_open='sudo systemctl reboot --firmware-setup'
 
 alias open='xdg-open'
 
+alias clear_cache='sudo sysctl -w vm.drop_caches=3'
+
 inkscape () {
     nohup /bin/env inkscape $* > /dev/null &
 }
 
 alias mnt_win='sudo mount /dev/sda3 /mnt/windows'
+
+xmlformat () {
+    for i
+    do
+        mv "$i" "$i.bak" || exit 1
+        if xmllint --format "$i.bak" > "$i"; then
+            rm "$i.bak"
+        else
+            mv "$i.bak" "$i"
+        fi
+    done
+}
