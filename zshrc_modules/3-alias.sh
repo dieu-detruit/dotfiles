@@ -8,7 +8,6 @@ alias vim='nvim -O'
 alias v='nvim -O'
 alias vimm='nvim -O'
 
-alias g++='g++-10 -std=c++20'
 alias clang++='clang++-10'
 
 # directory shortcut

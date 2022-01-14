@@ -45,6 +45,14 @@ let g:rustfmt_autosave = 1
 [[plugins]]
 repo='alx741/vim-stylishask'
 
+# Typescript
+[[plugins]]
+repo='leafgarland/typescript-vim'
+
+# TSX
+[[plugins]]
+repo='tasn/vim-tsx'
+
 
 # 補完
 [[plugins]]
