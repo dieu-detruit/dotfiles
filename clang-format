@@ -1,5 +1,5 @@
 BasedOnStyle: LLVM
-Standard: Latest
+Standard: c++17
 
 ColumnLimit: 0
 IndentWidth: 4
@@ -18,3 +18,15 @@ AllowShortFunctionsOnASingleLine: All
 
 SpacesBeforeTrailingComments: 2
 CommentPragmas: '[!\*]'
+
+IncludeBlocks: Regroup
+IncludeCategories:
+  # First-party header
+  - Regex:           '".*"'
+    Priority:        3
+  # Library header
+  - Regex:           '^<.*/.*>'
+    Priority:        2
+  # Standard library header
+  - Regex:           '^<.*>'
+    Priority:        1
