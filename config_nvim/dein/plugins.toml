@@ -47,7 +47,6 @@ let g:rustfmt_autosave = 1
 [[plugins]]
 repo='alx741/vim-stylishask'
 
-<<<<<<< HEAD
 # Typescript
 [[plugins]]
 repo='leafgarland/typescript-vim'

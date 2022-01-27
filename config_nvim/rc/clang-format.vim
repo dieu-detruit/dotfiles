@@ -22,6 +22,10 @@ function! s:clang_format()
     call Preserve(':silent %!clang-format -')
 endfunction
 
+function! s:cmake_format()
+    call Preserve(':silent %!cmake-format -')
+endfunction
+
 if executable('clang-format')
   augroup cpp_clang_format
     autocmd!
@@ -30,5 +34,12 @@ if executable('clang-format')
     autocmd BufWrite,FileWritePre,FileAppendPre *.[ch] call s:clang_format()
     autocmd BufWrite,FileWritePre,FileAppendPre *.pde call s:clang_format()
     autocmd BufWrite,FileWritePre,FileAppendPre *.ino call s:clang_format()
+  augroup END
+endif
+
+if executable('cmake-format')
+  augroup cmake_format
+    autocmd!
+    autocmd BufWrite,FileWritePre,FileAppendPre CMakeLists.txt call s:cmake_format()
   augroup END
 endif
