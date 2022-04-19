@@ -1,4 +1,5 @@
 config_nvim/dein/repos
 config_karabiner/automatic_backups
+*/*-local.sh
 pyenv/shims
 !pyenv/shims/.gitignore
