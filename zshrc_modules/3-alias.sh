@@ -41,6 +41,8 @@ alias clear_cache='sudo sysctl -w vm.drop_caches=3'
 
 alias copy='xsel --clipboard'
 
+alias repo='cd $(git rev-parse --show-toplevel)'
+
 inkscape () {
     nohup /bin/env inkscape $* > /dev/null &
 }
