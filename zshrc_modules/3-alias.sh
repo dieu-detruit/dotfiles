@@ -39,6 +39,8 @@ alias open='xdg-open'
 
 alias clear_cache='sudo sysctl -w vm.drop_caches=3'
 
+alias copy='xsel --clipboard'
+
 inkscape () {
     nohup /bin/env inkscape $* > /dev/null &
 }
