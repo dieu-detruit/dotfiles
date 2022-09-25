@@ -26,4 +26,4 @@ function peco-cdr () {
     fi
 }
 zle -N peco-cdr
-bindkey '^Q' peco-cdr
+bindkey '^W' peco-cdr
