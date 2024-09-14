@@ -47,19 +47,29 @@ std::deque<std::string> compile(std::deque<std::string> rc_lines)
     std::regex is_comment_re{R"(^\s*#)"};
     std::regex is_empty_re{R"(^\s*$)"};
     //std::regex replace_comment_re{R"esc(\s+#[^'"]*$)esc", std::regex_constants::ECMAScript};
-    std::regex path_export_re{R"(^export PATH="(\S+):\$PATH"\s*$)"};
+    std::regex path_export_top_re{R"(^export PATH="(\S+):\$PATH"\s*$)"};
+    std::regex path_export_bottom_re{
+        R"rawstring(^export PATH="\$PATH:(\S+)"\s*$)rawstring"};
     std::regex var_export_re{R"esc(^export (\S+)="(\S+)"\s*$)esc"};
 
     for (auto line : rc_lines) {
         if (std::regex_search(line, is_comment_re)) continue;
         if (std::regex_search(line, is_empty_re)) continue;
 
-        //std::string line_comment_removed = std::regex_replace(line, replace_comment_re, "");
+        // std::string line_comment_removed = std::regex_replace(line, replace_comment_re, "");
         std::string line_comment_removed = line;
 
         {
             std::smatch match_result;
-            if (std::regex_search(line_comment_removed, match_result, path_export_re)) {
+            if (std::regex_search(line_comment_removed, match_result, path_export_top_re)) {
+                export_paths.emplace_front(match_result[1].str());
+                continue;
+            }
+        }
+
+        {
+            std::smatch match_result;
+            if (std::regex_search(line_comment_removed, match_result, path_export_bottom_re)) {
                 export_paths.emplace_back(match_result[1].str());
                 continue;
             }
