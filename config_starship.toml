@@ -904,7 +904,6 @@ format = 'via [${symbol}](green bold)[${pyenv_prefix}(${version} )(\($virtualenv
 version_format = "v${raw}"
 style = "yellow bold"
 symbol = "𓆙  "
-symbol_style = "green"
 disabled = false
 detect_extensions = [
     "py",
