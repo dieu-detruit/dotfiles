@@ -1,0 +1,8 @@
+[package]
+name = "zshrc_compiler"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+regex = "1.10.2"
+dirs = "5.0.1"
