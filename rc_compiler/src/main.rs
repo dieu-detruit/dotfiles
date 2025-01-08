@@ -101,6 +101,9 @@ impl RcCompiler {
         }
 
         compiled_rc.push_front(compiled_path_export);
+        for (varname, content) in export_vars {
+            compiled_rc.push_front(format!(r#"export {}="{}""#, varname, content));
+        }
         compiled_rc
     }
 
@@ -146,6 +149,8 @@ impl RcCompiler {
         module_path_list.sort_by(|a, b| a.to_str().cmp(&b.to_str()));
 
         for module_path in &module_path_list {
+            println!("compiling: {}", module_path.display());
+
             let file = File::open(module_path)?;
             let reader = BufReader::new(file);
             for line in reader.lines() {
