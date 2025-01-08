@@ -66,11 +66,6 @@ impl RcCompiler {
             compiled_rc.push_back(line_comment_removed);
         }
 
-        // add HOME to var export
-        if let Some(home) = dirs::home_dir() {
-            export_vars.push_back(("HOME".to_string(), home.to_string_lossy().to_string()));
-        }
-
         // add path to rc_compiler to path export
         export_paths.push_back(self.binary_path.to_string_lossy().to_string());
 
@@ -83,6 +78,25 @@ impl RcCompiler {
                 .collect::<Vec<_>>()
                 .join(":")
         );
+
+        // expand HOME
+        let home = dirs::home_dir().unwrap().to_string_lossy().to_string();
+        let home_re = Regex::new(r"\$HOME").unwrap();
+        for line in &mut compiled_rc {
+            *line = home_re.replace_all(line, home.as_str()).to_string();
+        }
+        // expand HOME in export_vars contents
+        for (_varname, content) in &mut export_vars {
+            if home_re.find(content).is_some() {
+                *content = home_re.replace_all(content, home.as_str()).to_string();
+            }
+        }
+        // expand HOME in compiled_path_export
+        if home_re.find(&compiled_path_export).is_some() {
+            compiled_path_export = home_re
+                .replace_all(&compiled_path_export, home.as_str())
+                .to_string();
+        }
 
         // expand exported variables in path
         for (varname, content) in &export_vars {
