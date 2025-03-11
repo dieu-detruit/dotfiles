@@ -15,11 +15,11 @@ alias clang++='clang++-10'
 alias lab='cd ~/inamilab'
 
 # useful alias
-alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
+alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | uv run --no-project python -"
 
-alias json_pretty="python -c 'import sys,json;print(json.dumps(json.loads(sys.stdin.read()),indent=4,ensure_ascii=False))'"
-
-alias jpt=jupyter-lab --notebook-dir=$(pwd)
+jpt () {
+    uv run --no-project --with jupyterlab jupyter lab --notebook-dir=$(pwd)
+}
 
 alias :q='exit'
 
@@ -43,6 +43,8 @@ alias copy='xsel --clipboard'
 
 alias repo='cd $(git rev-parse --show-toplevel)'
 
+alias clipcd='cd $(xsel --clipboard --output)'
+
 inkscape () {
     nohup /bin/env inkscape $* > /dev/null &
 }
@@ -59,4 +61,8 @@ xmlformat () {
             mv "$i.bak" "$i"
         fi
     done
+}
+
+uuid () {
+  uv run --no-project python3 -c "import uuid; print(uuid.uuid4())"
 }
