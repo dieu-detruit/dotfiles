@@ -1,5 +1,5 @@
 # zplug (zsh plugin manager)
-export ZPLUG_HOME=~/.zplug
+export ZPLUG_HOME=$HOME/.zplug
 source $ZPLUG_HOME/init.zsh
 
 # locale setting
