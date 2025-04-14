@@ -41,7 +41,13 @@ alias clear_cache='sudo sysctl -w vm.drop_caches=3'
 
 alias copy='xsel --clipboard'
 
-alias repo='cd $(git rev-parse --show-toplevel)'
+repo () {
+  TOPLEVEL_DIR="$(git rev-parse --show-toplevel)"
+  if [ -z "$TOPLEVEL_DIR" ]; then
+    echo "Not in a git repository."
+    return 1
+  fi
+}
 
 alias clipcd='cd $(xsel --clipboard --output)'
 
