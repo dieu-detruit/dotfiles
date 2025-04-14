@@ -43,10 +43,12 @@ alias copy='xsel --clipboard'
 
 repo () {
   TOPLEVEL_DIR="$(git rev-parse --show-toplevel)"
-  if [ -z "$TOPLEVEL_DIR" ]; then
+  if [ -z "${TOPLEVEL_DIR}" ]; then
     echo "Not in a git repository."
     return 1
   fi
+  cd "${TOPLEVEL_DIR}" || return 1
+
 }
 
 alias clipcd='cd $(xsel --clipboard --output)'
