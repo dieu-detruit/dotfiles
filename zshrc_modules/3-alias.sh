@@ -41,7 +41,7 @@ alias clear_cache='sudo sysctl -w vm.drop_caches=3'
 
 alias copy='xsel --clipboard'
 
-repo () {
+back () {
   TOPLEVEL_DIR="$(git rev-parse --show-toplevel)"
   if [ -z "${TOPLEVEL_DIR}" ]; then
     echo "Not in a git repository."
