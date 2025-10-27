@@ -1,4 +1,4 @@
-#!/usr/bin
+#!/bin/bash
 
 ln -fs $HOME/dotfiles/zshrc_modules ~/.zshrc_modules
 ln -fs $HOME/dotfiles/config_nvim_lazy ~/.config/nvim
