@@ -89,13 +89,16 @@ primary-color='#000000000000'
 secondary-color='#000000000000'
 
 [org/gnome/desktop/input-sources]
-mru-sources=[('xkb', 'us')]
-sources=[('xkb', 'us')]
+mru-sources=[('xkb', 'us'), ('ibus', 'mozc-jp')]
+sources=[('xkb', 'us'), ('ibus', 'mozc-jp')]
 xkb-options=['ctrl:nocaps']
 
 [org/gnome/desktop/interface]
 gtk-im-module='ibus'
 gtk-theme='Yaru-dark'
+font-antialiasing='grayscale'
+font-hinting='slight'
+icon-theme='Yaru'
 
 [org/gnome/desktop/notifications]
 application-children=['org-gnome-nautilus', 'snap-store-ubuntu-software-local-file', 'snap-store-ubuntu-software', 'firefox', 'vivaldi-stable', 'org-gnome-baobab', 'apport-gtk', 'libreoffice-impress', 'zoom', 'org-gnome-eog', 'update-manager', 'google-chrome', 'mendeleydesktop', 'inkscape', 'libreoffice-calc', 'steam', 'discord', 'org-gnome-dejadup', 'usb-creator-gtk', 'gnome-printers-panel', 'slack', 'jetbrains-rider', 'unity', 'gazebo', 'org-inkscape-inkscape', 'gimp', 'org-gnome-evince', 'blender', 'netron-netron', 'jetbrains-clion', 'pavucontrol', 'mpv', 'processing-pde', 'blueman-manager', 'libreoffice-writer', 'clion-clion', 'teams']
@@ -248,6 +251,8 @@ switch-to-workspace-down=['<Ctrl><Alt>j']
 switch-to-workspace-left=['<Ctrl><Alt>h']
 switch-to-workspace-right=['<Ctrl><Alt>l']
 switch-to-workspace-up=['<Ctrl><Alt>k']
+switch-input-source=['<Ctrl>space']
+switch-input-source-backward=['']
 unmaximize=['<Ctrl><Alt>Down']
 
 [org/gnome/desktop/wm/preferences]
@@ -328,6 +333,7 @@ sort-order=0
 [org/gnome/mutter]
 dynamic-workspaces=false
 experimental-features=['x11-randr-fractional-scaling']
+edge-tiling=false
 
 [org/gnome/nautilus/icon-view]
 default-zoom-level='standard'
@@ -390,7 +396,7 @@ hinting='slight'
 [org/gnome/shell]
 app-picker-view=uint32 1
 command-history=['r']
-enabled-extensions=['wsmatrix@martin.zurowietz.de', 'multi-monitors-add-on@spin83']
+enabled-extensions=['wsmatrix@martin.zurowietz.de', 'multi-monitors-add-on@spin83', 'focus-follows-workspace@christopher.luebbemeier.gmail.com']
 favorite-apps=['firefox.desktop', 'org.gnome.Nautilus.desktop', 'snap-store_ubuntu-software.desktop', 'org.gnome.Terminal.desktop', 'google-chrome.desktop', 'gnome-control-center.desktop']
 had-bluetooth-devices-setup=false
 
@@ -402,6 +408,9 @@ preferred-monitor=0
 [org/gnome/shell/extensions/wsmatrix]
 num-columns=5
 num-rows=5
+multi-monitor=false
+show-popup=true
+wraparound-mode='none'
 
 [org/gnome/shell/keybindings]
 toggle-application-view=['<Alt>j']
@@ -426,8 +435,8 @@ new-tab-position='last'
 close-tab='<Alt>w'
 copy='<Alt>c'
 detach-tab='<Alt>t'
-move-tab-left='<Primary><Shift>Muhenkan'
-move-tab-right='<Primary><Shift>Hiragana_Katakana'
+move-tab-left='<Alt><Shift>h'
+move-tab-right='<Alt><Shift>l'
 new-tab='<Primary>t'
 next-tab='<Alt>l'
 paste='<Alt>v'
@@ -481,3 +490,10 @@ library-width=1024
 
 [system/proxy]
 mode='auto'
+
+[desktop/ibus/general/hotkey]
+triggers=['<Super>space']
+
+[org/gnome/mutter/keybindings]
+toggle-tiled-left=@as []
+toggle-tiled-right=@as []

@@ -253,7 +253,7 @@ switch-to-workspace-up=['<Ctrl><Alt>k']
 unmaximize=['<Primary><Alt>Down']
 
 [org/gnome/desktop/wm/preferences]
-num-workspaces=9
+num-workspaces=25
 
 [org/gnome/eog/plugins]
 active-plugins=['reload', 'fullscreen']
