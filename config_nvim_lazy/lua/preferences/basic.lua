@@ -15,7 +15,8 @@ vim.api.nvim_create_augroup("fileTypeIndent", { clear = true })
 local indent_2_file_types = {
     "*.yml", "*.yaml", "*.html", "*.rb", "*.css", "*.sh", "*.xacro",
     "*.xml", "*.sdf", "*.world", "*.launch", "*.vue", "*.urdf", "*.dart",
-    "*.ts", "*.tsx", "*.cc", "*.js", "*.json", "*.test", "*.proto", "*.lua"
+    "*.ts", "*.tsx", "*.cc", "*.js", "*.json", "*.test", "*.proto", "*.lua",
+    "*.nix"
 }
 
 for _, ft in ipairs(indent_2_file_types) do
@@ -37,6 +38,13 @@ vim.keymap.set("n", "[window]l", "<C-w>l")
 
 vim.keymap.set("n", "<C-c><C-c>", ":nohlsearch<CR>", { silent = true })
 vim.keymap.set("n", "<CR>", "A<CR><ESC>", { silent = true })
+
+-- Swap colon and semicolon
+vim.keymap.set("n", ":", ";")
+vim.keymap.set("n", ";", ":")
+vim.keymap.set("v", ":", ";")
+vim.keymap.set("v", ";", ":")
+
 
 -- Syntax settings
 vim.g.cpp_no_function_highlight = 1

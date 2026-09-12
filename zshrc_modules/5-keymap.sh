@@ -1,1 +1,1 @@
-alias capslock="xdotool key Caps_Lock"
+alias capslock="xdotool key Shift Caps_Lock"

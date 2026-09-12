@@ -1,5 +1,4 @@
 {
-  "conform.nvim": { "branch": "master", "commit": "d28ccf945374edd9f1c34a82f6c22261dbd8ab98" },
   "copilot.vim": { "branch": "release", "commit": "87038123804796ca7af20d1b71c3428d858a9124" },
   "ddc-matcher_head": { "branch": "main", "commit": "2be49f0c547fc224f70bd4a0b354b1c1dd9c9eac" },
   "ddc-sorter_rank": { "branch": "main", "commit": "98d1beaa3a94c7a1198c1d6b0440bd9bde7be212" },
@@ -9,10 +8,11 @@
   "ddc.vim": { "branch": "main", "commit": "c760d4acefc234f80b2feccb88ee36bf099aae0c" },
   "denops-helloworld.vim": { "branch": "main", "commit": "f975281571191cfd4e3f9e5ba77103932f7dd6e5" },
   "denops.vim": { "branch": "main", "commit": "4ff8f353ee54ee67288c1099242444ccb0ab5b69" },
-  "lazy.nvim": { "branch": "main", "commit": "b1134ab82ee4279e31f7ddf7e34b2a99eb9b7bc9" },
+  "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "lexima.vim": { "branch": "master", "commit": "5513d686801993b40c55baa65602f79cd3cf3c77" },
   "nerdcommenter": { "branch": "master", "commit": "66c07e4083ab02ed2540ac289cc602c70b858c13" },
   "rust.vim": { "branch": "master", "commit": "889b9a7515db477f4cb6808bef1769e53493c578" },
+  "starlark.vim": { "branch": "master", "commit": "55b48a87066a142faa51bbc0548a46d1575d15f0" },
   "typescript-vim": { "branch": "master", "commit": "8d169e16b5487771f6568125d4c63e6086e524d9" },
   "vim-cpp-modern": { "branch": "master", "commit": "c55335d2b2752aba9bd789b345ca85cb48780a56" },
   "vim-parenmatch": { "branch": "master", "commit": "3f3c18d0fcfaaeb093fababd4bce2edbb4f07b50" },

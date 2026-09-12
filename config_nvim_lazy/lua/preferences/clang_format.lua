@@ -38,7 +38,7 @@ if vim.fn.executable('clang-format') == 1 then
     vim.api.nvim_create_autocmd(
         { 'BufWrite', 'FileWritePre', 'FileAppendPre' },
         {
-            pattern = { '*.[ch]pp', '*.cc', '*.[ch]', '*.pde', '*.ino', '*.proto' },
+            pattern = { '*.[ch]pp', '*.cc', '*.[ch]', '*.pde', '*.ino' },
             callback = clang_format_in_place,
             group = 'cpp_clang_format',
         }
