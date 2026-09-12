@@ -1,0 +1,3 @@
+# OpenCode CLI
+export PATH="$HOME/.opencode/bin:$PATH"
+export OPENCODE_EXPERIMENTAL_OUTPUT_TOKEN_MAX=131072

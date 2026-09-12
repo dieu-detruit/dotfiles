@@ -9,7 +9,7 @@ alias vim='nvim -O'
 alias v='nvim -O'
 alias vimm='nvim -O'
 
-alias clang++='clang++-10'
+alias bazel="bazelisk"
 
 # directory shortcut
 alias lab='cd ~/inamilab'
@@ -73,4 +73,8 @@ xmlformat () {
 
 uuid () {
   uv run --no-project python3 -c "import uuid; print(uuid.uuid4())"
+}
+
+gen_gitignore() {
+  curl "https://www.toptal.com/developers/gitignore/api/$@"
 }
