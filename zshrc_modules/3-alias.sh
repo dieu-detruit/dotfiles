@@ -77,4 +77,4 @@ uuid () {
 
 gen_gitignore() {
   curl "https://www.toptal.com/developers/gitignore/api/$@"
-}
+} 

@@ -22,6 +22,9 @@ show-livepatch-status-icon=true
 preload-engines=['xkb:us::eng', 'mozc-jp']
 version='1.5.22'
 
+[desktop/ibus/general/hotkey]
+triggers=['<Super>space']
+
 [org/blueman/general]
 window-properties=[564, 350, 470, 298]
 
@@ -30,6 +33,10 @@ auto-power-on=@mb true
 
 [org/blueman/plugins/recentconns]
 recent-connections=[{'adapter': '00:1A:7D:DA:71:15', 'address': '08:EB:ED:A8:4B:5D', 'alias': 'SoundCore 2', 'icon': 'audio-card', 'name': '自動接続プロファイル', 'uuid': '00000000-0000-0000-0000-000000000000', 'time': '1629519967.552809', 'device': '', 'mitem': ''}]
+
+[org/gnome/Extensions]
+window-height=804
+window-width=1136
 
 [org/gnome/Mahjongg]
 mapset='The Ziggurat'
@@ -60,6 +67,7 @@ window-state=87168
 
 [org/gnome/control-center]
 last-panel='sound'
+window-state=(980, 640, false)
 
 [org/gnome/deja-dup]
 backend='google'
@@ -70,6 +78,11 @@ migrated=true
 
 [org/gnome/desktop/app-folders]
 folder-children=['Utilities', 'YaST']
+
+[org/gnome/desktop/app-folders/folders/Pardus]
+categories=['X-Pardus-Apps']
+name='X-Pardus-Apps.directory'
+translate=true
 
 [org/gnome/desktop/app-folders/folders/Utilities]
 apps=['gnome-abrt.desktop', 'gnome-system-log.desktop', 'gnome-system-monitor.desktop', 'gucharmap.desktop', 'nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.Calculator.desktop', 'org.gnome.DejaDup.desktop', 'org.gnome.Dictionary.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.eog.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.fonts.desktop', 'org.gnome.Screenshot.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.Usage.desktop', 'simple-scan.desktop', 'vinagre.desktop', 'yelp.desktop']
@@ -85,6 +98,7 @@ translate=true
 [org/gnome/desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
+picture-uri='file:///home/dieu/.local/share/backgrounds/2021-10-13-14-58-43-nijisanji_junevoice2021_02_keyvisual_1920%C3%971080.png'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
@@ -94,6 +108,8 @@ sources=[('xkb', 'us'), ('ibus', 'mozc-jp')]
 xkb-options=['ctrl:nocaps']
 
 [org/gnome/desktop/interface]
+font-antialiasing='grayscale'
+font-hinting='slight'
 gtk-im-module='ibus'
 gtk-theme='Yaru-dark'
 font-antialiasing='grayscale'
@@ -106,6 +122,9 @@ application-children=['org-gnome-nautilus', 'snap-store-ubuntu-software-local-fi
 [org/gnome/desktop/notifications/application/apport-gtk]
 application-id='apport-gtk.desktop'
 
+[org/gnome/desktop/notifications/application/blender-blender]
+application-id='blender_blender.desktop'
+
 [org/gnome/desktop/notifications/application/blender]
 application-id='blender.desktop'
 
@@ -114,6 +133,9 @@ application-id='blueman-manager.desktop'
 
 [org/gnome/desktop/notifications/application/clion-clion]
 application-id='clion_clion.desktop'
+
+[org/gnome/desktop/notifications/application/cursor]
+application-id='cursor.desktop'
 
 [org/gnome/desktop/notifications/application/discord]
 application-id='discord.desktop'
@@ -126,6 +148,9 @@ application-id='gazebo.desktop'
 
 [org/gnome/desktop/notifications/application/gimp]
 application-id='gimp.desktop'
+
+[org/gnome/desktop/notifications/application/gnome-power-panel]
+application-id='gnome-power-panel.desktop'
 
 [org/gnome/desktop/notifications/application/gnome-printers-panel]
 application-id='gnome-printers-panel.desktop'
@@ -175,6 +200,12 @@ application-id='org.gnome.Evince.desktop'
 [org/gnome/desktop/notifications/application/org-gnome-nautilus]
 application-id='org.gnome.Nautilus.desktop'
 
+[org/gnome/desktop/notifications/application/org-gnome-settings]
+application-id='org.gnome.Settings.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-terminal]
+application-id='org.gnome.Terminal.desktop'
+
 [org/gnome/desktop/notifications/application/org-inkscape-inkscape]
 application-id='org.inkscape.Inkscape.desktop'
 
@@ -183,6 +214,12 @@ application-id='pavucontrol.desktop'
 
 [org/gnome/desktop/notifications/application/processing-pde]
 application-id='processing-pde.desktop'
+
+[org/gnome/desktop/notifications/application/shotcut-shotcut]
+application-id='shotcut_shotcut.desktop'
+
+[org/gnome/desktop/notifications/application/slack-slack]
+application-id='slack_slack.desktop'
 
 [org/gnome/desktop/notifications/application/slack]
 application-id='slack.desktop'
@@ -219,11 +256,20 @@ two-finger-scrolling-enabled=true
 
 [org/gnome/desktop/privacy]
 disable-microphone=false
+old-files-age=uint32 30
+recent-files-max-age=-1
 report-technical-problems=true
+
+[org/gnome/desktop/remote-desktop/rdp]
+enable=true
+tls-cert='/home/genki/.local/share/gnome-remote-desktop/certificates/rdp-tls.crt'
+tls-key='/home/genki/.local/share/gnome-remote-desktop/certificates/rdp-tls.key'
+view-only=false
 
 [org/gnome/desktop/screensaver]
 color-shading-type='solid'
 picture-options='zoom'
+picture-uri='file:///home/dieu/.local/share/backgrounds/2021-10-13-14-58-43-nijisanji_junevoice2021_02_keyvisual_1920%C3%971080.png'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
@@ -247,6 +293,8 @@ move-to-workspace-down=['<Shift><Ctrl><Alt>j']
 move-to-workspace-left=['<Shift><Ctrl><Alt>h']
 move-to-workspace-right=['<Shift><Ctrl><Alt>l']
 move-to-workspace-up=['<Shift><Ctrl><Alt>k']
+switch-input-source=['<Ctrl>space']
+switch-input-source-backward=['']
 switch-to-workspace-down=['<Ctrl><Alt>j']
 switch-to-workspace-left=['<Ctrl><Alt>h']
 switch-to-workspace-right=['<Ctrl><Alt>l']
@@ -260,6 +308,9 @@ num-workspaces=25
 
 [org/gnome/eog/plugins]
 active-plugins=['reload', 'fullscreen']
+
+[org/gnome/eog/ui]
+sidebar=true
 
 [org/gnome/eog/view]
 background-color='rgb(238,238,236)'
@@ -305,6 +356,11 @@ window-width=600
 [org/gnome/gedit/plugins]
 active-plugins=['docinfo', 'modelines', 'time', 'spell', 'filebrowser']
 
+[org/gnome/gedit/plugins/filebrowser]
+root='file:///'
+tree-view=true
+virtual-root='file:///home/dieu/inamilab/wheeled-environment/oculus/passthrough_test_2/Assets/Scripts'
+
 [org/gnome/gedit/preferences/ui]
 show-tabs-mode='auto'
 
@@ -332,14 +388,20 @@ sort-order=0
 
 [org/gnome/mutter]
 dynamic-workspaces=false
+edge-tiling=false
 experimental-features=['x11-randr-fractional-scaling']
 edge-tiling=false
+
+[org/gnome/mutter/keybindings]
+toggle-tiled-left=@as []
+toggle-tiled-right=@as []
 
 [org/gnome/nautilus/icon-view]
 default-zoom-level='standard'
 
 [org/gnome/nautilus/preferences]
 default-folder-viewer='icon-view'
+migrated-gtk-settings=true
 search-filter-time-type='last_modified'
 search-view='list-view'
 
@@ -347,6 +409,13 @@ search-view='list-view'
 initial-size=(1038, 410)
 maximized=false
 sidebar-width=202
+
+[org/gnome/nm-applet/eap/62886693-0b28-4e00-ae5e-2425b0c25772]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
+
+[org/gnome/portal/filechooser/com.google.Chrome]
+last-folder-path='/home/genki/Pictures/Screenshots'
 
 [org/gnome/power-manager]
 info-history-type='charge'
@@ -380,6 +449,9 @@ show-browser=true
 [org/gnome/rhythmbox/podcast/source]
 show-browser=true
 
+[org/gnome/rhythmbox/rhythmdb]
+locations=['file:///home/dieu/Music']
+
 [org/gnome/settings-daemon/plugins/media-keys]
 max-screencast-length=uint32 3600
 volume-down=['<Alt>F11']
@@ -394,18 +466,27 @@ antialiasing='grayscale'
 hinting='slight'
 
 [org/gnome/shell]
+app-picker-layout=[{'software-properties-drivers.desktop': <{'position': <0>}>, 'firmware-updater_firmware-updater.desktop': <{'position': <1>}>, 'gnome-language-selector.desktop': <{'position': <2>}>, 'org.gnome.clocks.desktop': <{'position': <3>}>, 'nvim.desktop': <{'position': <4>}>, 'nvidia-settings.desktop': <{'position': <5>}>, 'org.gnome.PowerStats.desktop': <{'position': <6>}>, 'software-properties-gtk.desktop': <{'position': <7>}>, 'update-manager.desktop': <{'position': <8>}>, 'gnome-session-properties.desktop': <{'position': <9>}>, 'org.gnome.Settings.desktop': <{'position': <10>}>, 'org.gnome.TextEditor.desktop': <{'position': <11>}>, 'org.gnome.SystemMonitor.desktop': <{'position': <12>}>, 'vim.desktop': <{'position': <13>}>, 'snap-store_snap-store.desktop': <{'position': <14>}>, 'Utilities': <{'position': <15>}>, 'firefox_firefox.desktop': <{'position': <16>}>}]
 app-picker-view=uint32 1
 command-history=['r']
 enabled-extensions=['wsmatrix@martin.zurowietz.de', 'multi-monitors-add-on@spin83', 'focus-follows-workspace@christopher.luebbemeier.gmail.com']
 favorite-apps=['firefox.desktop', 'org.gnome.Nautilus.desktop', 'snap-store_ubuntu-software.desktop', 'org.gnome.Terminal.desktop', 'google-chrome.desktop', 'gnome-control-center.desktop']
 had-bluetooth-devices-setup=false
+welcome-dialog-last-shown-version='46.0'
 
 [org/gnome/shell/extensions/dash-to-dock]
 dock-fixed=false
 multi-monitor=true
 preferred-monitor=0
 
+[org/gnome/shell/extensions/tiling-assistant]
+active-window-hint-color='rgb(211,70,21)'
+last-version-installed=46
+overridden-settings={'org.gnome.mutter.edge-tiling': <@mb nothing>, 'org.gnome.desktop.wm.keybindings.maximize': <@mb nothing>, 'org.gnome.desktop.wm.keybindings.unmaximize': <@mb nothing>, 'org.gnome.mutter.keybindings.toggle-tiled-left': <@mb nothing>, 'org.gnome.mutter.keybindings.toggle-tiled-right': <@mb nothing>}
+tiling-popup-all-workspace=true
+
 [org/gnome/shell/extensions/wsmatrix]
+multi-monitor=false
 num-columns=5
 num-rows=5
 multi-monitor=false
@@ -414,6 +495,9 @@ wraparound-mode='none'
 
 [org/gnome/shell/keybindings]
 toggle-application-view=['<Alt>j']
+
+[org/gnome/shell/world-clocks]
+locations=@av []
 
 [org/gnome/software]
 check-timestamp=int64 1639170969
@@ -443,12 +527,27 @@ paste='<Alt>v'
 prev-tab='<Alt>h'
 select-all='<Alt>a'
 
+[org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+use-system-font=false
+
 [org/gnome/todo]
 default-provider='local'
 view='grid'
 window-maximized=false
 window-position=[26, 23]
 window-size=[1796, 1074]
+
+[org/gtk/gtk4/settings/file-chooser]
+date-format='regular'
+location-mode='path-bar'
+show-hidden=false
+sidebar-width=140
+sort-column='modified'
+sort-directories-first=true
+sort-order='descending'
+type-format='category'
+view-type='list'
+window-size=(1063, 372)
 
 [org/gtk/settings/color-chooser]
 custom-colors=[(0.0, 1.0, 0.0, 1.0)]
@@ -487,6 +586,9 @@ sidebar-position=180
 library-height=768
 library-maximize=false
 library-width=1024
+
+[system/locale]
+region='en_US.UTF-8'
 
 [system/proxy]
 mode='auto'
