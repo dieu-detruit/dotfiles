@@ -141,6 +141,76 @@ impl RcCompiler {
         );
     }
 
+    // Build the uv completion cache that the generated .zshrc sources.
+    //
+    // The shell sources the .zwc next to the file when it is newer. Every
+    // failure here only warns: the shell falls back to `eval` on its own.
+    fn build_uv_completion(&self) {
+        let cache_root = match env::var_os("XDG_CACHE_HOME") {
+            Some(dir) => PathBuf::from(dir),
+            None => match dirs::home_dir() {
+                Some(home) => home.join(".cache"),
+                None => {
+                    eprintln!("warning: no home directory, skipping uv completion");
+                    return;
+                }
+            },
+        };
+        let cache_dir = cache_root.join("zsh");
+        let completion_path = cache_dir.join("uv-comp.zsh");
+        let temp_path = cache_dir.join("uv-comp.zsh.tmp");
+
+        let output = match Command::new("uv")
+            .args(["generate-shell-completion", "zsh"])
+            .output()
+        {
+            Ok(output) => output,
+            Err(error) => {
+                eprintln!("warning: cannot run uv, skipping uv completion: {}", error);
+                return;
+            }
+        };
+        if !output.status.success() {
+            eprintln!("warning: uv generate-shell-completion failed, skipping uv completion");
+            return;
+        }
+
+        if let Err(error) = fs::create_dir_all(&cache_dir) {
+            eprintln!("warning: cannot create {}: {}", cache_dir.display(), error);
+            return;
+        }
+        // Write through a temporary path so a failure never truncates the cache.
+        if let Err(error) = fs::write(&temp_path, &output.stdout) {
+            eprintln!("warning: cannot write {}: {}", temp_path.display(), error);
+            return;
+        }
+        if let Err(error) = fs::rename(&temp_path, &completion_path) {
+            eprintln!("warning: cannot rename {}: {}", temp_path.display(), error);
+            let _ = fs::remove_file(&temp_path);
+            return;
+        }
+
+        let status = match Command::new("zsh")
+            .args([
+                "-c",
+                &format!("zcompile {}", completion_path.to_string_lossy()),
+            ])
+            .status()
+        {
+            Ok(status) => status,
+            Err(error) => {
+                eprintln!("warning: cannot run zsh for uv completion: {}", error);
+                return;
+            }
+        };
+        if !status.success() {
+            eprintln!(
+                "warning: zcompile failed for {}",
+                completion_path.display()
+            );
+        }
+    }
+
     fn run_compile(
         &self,
         modules_path: &PathBuf,
@@ -183,6 +253,8 @@ impl RcCompiler {
         }
 
         self.run_zcompile(&zshrc_path, &zplug_init_path);
+
+        self.build_uv_completion();
 
         Ok(())
     }
